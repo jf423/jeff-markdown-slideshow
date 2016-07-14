@@ -4,8 +4,9 @@ export class LivePreview extends Component{
 	constructor(props,context){
 		super(props,context);
 		this.state = {
-
+			html:''
 		};
+		this.converter = new showdown.Converter();
 	}
 	componentWillUnMount() {
 
@@ -13,10 +14,18 @@ export class LivePreview extends Component{
 	componentDidMount() {
 
 	}
+	componentDidUpdate(preProps,preState){
+		document.getElementById('livePreview').innerHTML = this.state.html;
+	}
+	componentWillReceiveProps(props){
+		var html = this.converter.makeHtml(props.text);
+		this.setState({
+			html:html 
+		});
+	}
 	render() {
 		return (
-			<div>
-				{this.props.text}
+			<div id="livePreview">
 			</div>
 		);
 	}
