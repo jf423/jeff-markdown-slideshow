@@ -14,14 +14,14 @@ export class LivePreview extends Component{
 	componentDidMount() {
 
 	}
-	componentDidUpdate(preProps,preState){
-		document.getElementById('livePreview').innerHTML = this.state.html;
-	}
 	componentWillReceiveProps(props){
 		var html = this.converter.makeHtml(props.text);
 		this.setState({
 			html:html 
 		});
+	}
+	componentDidUpdate(preProps,preState){
+		document.getElementById('livePreview').innerHTML = this.state.html;
 	}
 	render() {
 		return (

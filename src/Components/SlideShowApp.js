@@ -27,7 +27,7 @@ export class SlideShowApp extends Component{
 		return (
 			<div className="row">
 				<div className="col-md-6 col-sm-6">
-					<SlideShowButton className="btn btn-primary" />
+					<SlideShowButton text={this.state.text} className="btn btn-primary" />
 					<textarea className="form-control" rows="30" onChange={this.onChange} value={this.state.text} />
 				</div>
 				<div className="col-md-6 col-sm-6">
