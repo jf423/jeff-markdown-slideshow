@@ -12,9 +12,16 @@ export class SlideShowButton extends Component{
 
 	}
 	componentDidMount() {
-
+		$(this.refs.playback).addClass('disabled');
 	}
-	handleClick(){
+	componentDidUpdate(preProps,preState){
+		if (this.props.play === true) {
+			$(this.refs.playback).removeClass('disabled');
+		} else {
+			$(this.refs.playback).addClass('disabled');
+		}
+	}
+	handleClick(e){
 		this.setState({
 			text:this.props.text
 		});
@@ -24,7 +31,7 @@ export class SlideShowButton extends Component{
 	render() {
 		return (
 			<div>
-				<button className={this.props.className} onClick={this.handleClick}>play</button>
+				<button ref="playback" className={this.props.className} onClick={this.handleClick}>play</button>
 			</div>
 		);
 	}
