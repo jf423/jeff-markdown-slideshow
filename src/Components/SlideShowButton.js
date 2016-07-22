@@ -46,6 +46,11 @@ export class SlideShowButton extends Component{
 }
 
 SlideShowButton.defaultProps = {
-	
+	text: '',
+	play: false,
+	className: 'btn btn-primary'
 }
-
+SlideShowButton.propTypes = {
+	text: React.PropTypes.string,
+	play: React.PropTypes.bool
+}

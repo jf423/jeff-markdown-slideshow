@@ -42,4 +42,8 @@ export class SlideShowApp extends Component{
 SlideShowApp.defaultProps = {
 
 }
+SlideShowApp.propTypes = {
+	text: React.PropTypes.string,
+	play: React.PropTypes.bool
+}
 

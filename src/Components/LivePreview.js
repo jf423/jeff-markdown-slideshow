@@ -32,6 +32,9 @@ export class LivePreview extends Component{
 }
 
 LivePreview.defaultProps = {
-	
+	text: ''
 }
-
+LivePreview.propTypes = {
+	text: React.PropTypes.string,
+	html: React.PropTypes.string
+}
