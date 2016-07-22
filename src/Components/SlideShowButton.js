@@ -12,13 +12,19 @@ export class SlideShowButton extends Component{
 
 	}
 	componentDidMount() {
-		$(this.refs.playback).addClass('disabled');
+		this.refs.playback.className += " disabled";
+		//use with jQuery
+		// $(this.refs.playback).addClass('disabled');
 	}
 	componentDidUpdate(preProps,preState){
 		if (this.props.play === true) {
-			$(this.refs.playback).removeClass('disabled');
+			this.refs.playback.className = this.props.className;
+			//use with jQuery
+			// $(this.refs.playback).removeClass('disabled');
 		} else {
-			$(this.refs.playback).addClass('disabled');
+			this.refs.playback.className += " disabled";
+			//use with jQuery
+			// $(this.refs.playback).addClass('disabled');
 		}
 	}
 	handleClick(e){
