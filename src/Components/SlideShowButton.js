@@ -25,8 +25,10 @@ export class SlideShowButton extends Component{
 		this.setState({
 			text:this.props.text
 		});
-		document.getElementById('source').innerHTML = this.props.text;
-		remark.create();
+		if (this.props.play === true) {
+			document.getElementById('source').innerHTML = this.props.text;
+			remark.create();
+		}
 	}
 	render() {
 		return (
